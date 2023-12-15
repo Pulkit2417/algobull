@@ -1,0 +1,40 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Adjust to your default branch name if different
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12.1'  # Specify your Python version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Replace with your requirements file
+
+      - name: Run unit tests
+        run: |
+          python manage.py test todolist # Run your unit tests command here
+
+      - name: Run integration tests
+        run: |
+          python manage.py test todolist # Replace with your integration tests directory
+
+      - name: Lint with Flake8
+        run: |
+          flake8  # Run Flake8 linting tool
+
+      - name: Lint with Black
+        run: |
+          black .  # Run Black for code reformatting
