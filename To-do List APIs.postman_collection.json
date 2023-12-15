@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "c439da36-6508-4bb7-900f-4228c416b007",
+		"name": "To-do List APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31808433"
+	},
+	"item": [
+		{
+			"name": "Create ToDoItem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Finish Project\",\r\n    \"description\": \"Complete the assignment on To-Do List\",\r\n    \"status\": \"OPEN\",\r\n    \"due_date\": \"2023-12-31\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://to-do-listapp-7aee02cc25cb.herokuapp.com/api/todoitems/",
+					"protocol": "https",
+					"host": [
+						"to-do-listapp-7aee02cc25cb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"todoitems",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All ToDoItems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://to-do-listapp-7aee02cc25cb.herokuapp.com/api/todoitems/",
+					"protocol": "https",
+					"host": [
+						"to-do-listapp-7aee02cc25cb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"todoitems",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single ToDoItem",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://to-do-listapp-7aee02cc25cb.herokuapp.com/api/todoitems/1/",
+					"protocol": "https",
+					"host": [
+						"to-do-listapp-7aee02cc25cb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"todoitems",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update ToDo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Updated Title\",\r\n    \"description\": \"Updated Description\",\r\n    \"due_date\": \"2023-12-31\",\r\n    \"status\": \"DONE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://to-do-listapp-7aee02cc25cb.herokuapp.com/api/todoitems/1/",
+					"protocol": "https",
+					"host": [
+						"to-do-listapp-7aee02cc25cb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"todoitems",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tag",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tag Name\"\r\n    // Add other fields if required\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://to-do-listapp-7aee02cc25cb.herokuapp.com/api/tags/",
+					"protocol": "https",
+					"host": [
+						"to-do-listapp-7aee02cc25cb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tags",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tags",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://to-do-listapp-7aee02cc25cb.herokuapp.com/api/tags/",
+					"protocol": "https",
+					"host": [
+						"to-do-listapp-7aee02cc25cb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tags",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Tag",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://to-do-listapp-7aee02cc25cb.herokuapp.com/api/tags/2/",
+					"protocol": "https",
+					"host": [
+						"to-do-listapp-7aee02cc25cb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tags",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Tag",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Tag Name\"\r\n    // Add other fields to update\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://to-do-listapp-7aee02cc25cb.herokuapp.com/api/tags/2/",
+					"protocol": "https",
+					"host": [
+						"to-do-listapp-7aee02cc25cb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tags",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Tag",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://to-do-listapp-7aee02cc25cb.herokuapp.com/api/tags/1/",
+					"protocol": "https",
+					"host": [
+						"to-do-listapp-7aee02cc25cb",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"tags",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
