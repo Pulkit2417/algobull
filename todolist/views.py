@@ -8,13 +8,16 @@ class ToDoItemListCreateAPIView(generics.ListCreateAPIView):
     queryset = ToDoItem.objects.all()
     serializer_class = ToDoItemSerializer
 
+
 class ToDoItemDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = ToDoItem.objects.all()
     serializer_class = ToDoItemSerializer
 
+
 class TagListCreateAPIView(generics.ListCreateAPIView):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
+
 
 class TagDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Tag.objects.all()
