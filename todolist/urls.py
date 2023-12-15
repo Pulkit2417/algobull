@@ -9,11 +9,27 @@ from .views import (
 
 
 urlpatterns = [
-    path('api/todoitems/', ToDoItemListCreateAPIView.as_view(), name='todoitem-list-create'),
-    path('api/todoitems/<int:pk>/', ToDoItemDetailAPIView.as_view(), name='todoitem-detail'),
+    path(
+        'api/todoitems/',
+        ToDoItemListCreateAPIView.as_view(),
+        name='todoitem-list-create'
+    ),
+    path(
+        'api/todoitems/<int:pk>/',
+        ToDoItemDetailAPIView.as_view(),
+        name='todoitem-detail'
+    ),
 
-    path('api/tags/', TagListCreateAPIView.as_view(), name='tag-list-create'),
-    path('api/tags/<int:pk>/', TagDetailAPIView.as_view(), name='tag-detail'),
-    path('', views.tasklist, name='tag-detail'),
-    
+    path(
+        'api/tags/',
+        TagListCreateAPIView.as_view(),
+        name='tag-list-create'
+    ),
+    path(
+        'api/tags/<int:pk>/',
+        TagDetailAPIView.as_view(),
+        name='tag-detail'
+    ),
+
+    path('', views.tasklist, name='todo-detail'),
 ]
