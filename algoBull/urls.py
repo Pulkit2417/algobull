@@ -1,3 +1,7 @@
+from django.contrib import admin
+from django.urls import path, include
+
+
 """
 URL configuration for algoBull project.
 
@@ -16,9 +20,6 @@ Including another URLconf
 """
 """path('', include("todolist.urls")),"""
 
-
-from django.contrib import admin
-from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
