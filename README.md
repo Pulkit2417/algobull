@@ -33,7 +33,7 @@ This project is a Django-based To-Do List application developed as part of the A
 
 ## Coverage Report
 
-![Screenshot](https://raw.githubusercontent.com/Pulkit2417/algobull/main/Screenshot%202023-12-20%20153757.png)
+![Screenshot](https://raw.githubusercontent.com/Pulkit2417/algobull/main/Screenshot%202023-12-20%20153757.png?raw=true)
 
 ## Continuous Integration/Continuous Deployment (CI/CD)
 
