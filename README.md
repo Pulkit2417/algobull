@@ -29,11 +29,11 @@ This project is a Django-based To-Do List application developed as part of the A
 
 ## Testing
 
-- **Unit & Integration Tests**: Achieved 100% code coverage by writing extensive tests for models, views, and API endpoints.
+- **Unit & Integration Tests**: Achieved almost 100% code coverage by writing extensive tests for models, views, and API endpoints.
 
 ## Coverage Report
 
-![Screenshot](https://raw.githubusercontent.com/Pulkit2417/algobull/main/Screenshot%202023-12-20%20153757.png?raw=true)
+![Screenshot](https://github.com/Pulkit2417/algobull/blob/main/coverage.png)
 
 ## Continuous Integration/Continuous Deployment (CI/CD)
 
