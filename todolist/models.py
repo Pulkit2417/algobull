@@ -21,13 +21,14 @@ class ToDoItem(models.Model):
         return self.title
 
     def clean(self):
-        # Check if due_date is before timestamp only if both are not None
-        if self.due_date and self.timestamp:
-            if self.due_date < self.timestamp.date():
-                raise ValidationError("Due Date before Timestamp created")
+        today = date.today()
+
+        # Check if the due date is before today's date
+        if self.due_date and self.due_date < today:
+            raise ValidationError("Due date cannot be before today's date.")
 
     def save(self, *args, **kwargs):
-        self.full_clean()  # Run full validation before saving
+        self.clean()  # Validate before saving
         super().save(*args, **kwargs)
 
 
