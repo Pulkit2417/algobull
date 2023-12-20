@@ -31,6 +31,10 @@ This project is a Django-based To-Do List application developed as part of the A
 
 - **Unit & Integration Tests**: Achieved 100% code coverage by writing extensive tests for models, views, and API endpoints.
 
+## Coverage Report
+
+- 
+
 ## Continuous Integration/Continuous Deployment (CI/CD)
 
 - **GitHub Actions**: Configured GitHub Actions for automated testing (unit & integration) and linting using Flake8 and Black.
