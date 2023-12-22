@@ -68,7 +68,6 @@ class ToDoItemModelTest(TestCase):
                 due_date=past_date,
                 status='OPEN'
             )
-    
     # Add more tests for other model functionalities as needed
 
 
