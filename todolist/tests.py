@@ -3,6 +3,7 @@ from .models import ToDoItem, Tag
 from django.utils import timezone
 from django.test import TestCase, Client
 from django.urls import reverse
+from datetime import date
 
 
 # <<<<<------UNIT TESTS------>>>>>
@@ -32,6 +33,42 @@ class ToDoItemModelTest(TestCase):
         todo_item.clean = original_clean
         # Ensure the ToDoItem wasn't saved due to validation error
         self.assertIsNone(todo_item.id)
+
+    def test_todo_item_string_representation(self):
+        # Test string representation of ToDoItem
+        todo_item = ToDoItem.objects.create(
+            title='Test Task',
+            description='Test Description',
+            status='OPEN'
+        )
+        self.assertEqual(str(todo_item), 'Test Task')
+
+    def test_todo_item_save_method(self):
+        # Test save method of ToDoItem
+        todo_item = ToDoItem(
+            title='Test Task',
+            description='Test Description',
+            status='OPEN'
+        )
+        todo_item.save()
+        self.assertIsNotNone(todo_item.id)
+
+    def test_tag_string_representation(self):
+        # Test string representation of Tag
+        tag = Tag.objects.create(name='Test Tag')
+        self.assertEqual(str(tag), 'Test Tag')
+
+    def test_todo_item_with_past_due_date(self):
+        # Test ToDoItem creation with a past due date
+        past_date = date.today() - timezone.timedelta(days=1)
+        with self.assertRaises(ValidationError):
+            ToDoItem.objects.create(
+                title='Past Due Task',
+                description='Description',
+                due_date=past_date,
+                status='OPEN'
+            )
+    
     # Add more tests for other model functionalities as needed
 
 
@@ -77,4 +114,8 @@ class ToDoItemAPITest(TestCase):
         self.assertEqual(response.data['description'], todo_item.description)
         self.assertEqual(response.data['status'], todo_item.status)
 
-    # Add more tests for other view functionalities as needed
+    def test_tasklist_view(self):
+        # Test the tasklist view
+        response = self.client.get('')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.content.decode('utf-8'), 'To Do List')
