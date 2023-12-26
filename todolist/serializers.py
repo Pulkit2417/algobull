@@ -9,7 +9,10 @@ class TagSerializer(serializers.ModelSerializer):
 
 
 class ToDoItemSerializer(serializers.ModelSerializer):
-    tags = serializers.ListField(child=serializers.CharField(max_length=50), write_only=True)
+    tags = serializers.ListField(
+        child=serializers.CharField(max_length=50),
+        write_only=True
+    )
 
     class Meta:
         model = ToDoItem
@@ -27,7 +30,6 @@ class ToDoItemSerializer(serializers.ModelSerializer):
         todo_item = ToDoItem.objects.create(**validated_data)
         todo_item.tags.add(*tags)  # Add tags to the ToDoItem
         return todo_item
-
 
 
 class ToDoItemViewSet(viewsets.ModelViewSet):
