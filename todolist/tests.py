@@ -92,9 +92,10 @@ class ToDoItemAPITest(TestCase):
         data = {
             'title': 'Test Task',
             'description': 'Test Description',
-            'status': 'OPEN'
+            'status': 'OPEN',
+            'tags': ['Tag1', 'Tag2']  # Modify this line with the desired tag names
         }
-        response = self.client.post(self.create_url, data)
+        response = self.client.post(self.create_url, data, format='json')  # Ensure data is sent in JSON format
         # Ensure successful creation
         self.assertEqual(response.status_code, 201)
 
